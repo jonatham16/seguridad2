@@ -12,7 +12,7 @@ security:
                 property: login
 
     # the main part of the security, where you can set up firewalls
-    # for specific sections of your app
+    # for specific sections of your app 
     firewalls:
         # disables authentication for assets and the profiler, adapt it according to your needs
         area_segura:
