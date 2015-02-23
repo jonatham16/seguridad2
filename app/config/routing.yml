@@ -1,0 +1,4 @@
+molinaseguridad:
+    resource: "@molinaseguridadBundle/Resources/config/routing.yml"
+    prefix:   /
+

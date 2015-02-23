@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>LOGIN!</title>
+    </head>
+    <body>
+        {% if error %}
+            <div>{{ error.message }}</div>
+        {% endif %}
+        <form action="{{ path('check_path') }}" method="post"
+              <p>usuario<input type="text" name="_username" /></p>
+            <p>contrasena <input type="text" name="_password" /></p>
+            <p><input type="submit" value="enviar" /></p>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+security:
+    # http://symfony.com/doc/current/book/security.html#encoding-the-user-s-password
+    encoders:
+        molina\SeguridadBundle\Entity\Usuario:
+            algorithm: plaintext
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        usuarios_bd:
+            entity:
+                class: molinaseguridadBundle:Usuario
+                property: login
+
+    # the main part of the security, where you can set up firewalls
+    # for specific sections of your app
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        area_segura:
+            pattern:   ^/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: check_path
+            logout:
+                path:   logout
+                target: /
+
+    access_control:
+        - { path: ^/perfil, roles: ROLE_USER }

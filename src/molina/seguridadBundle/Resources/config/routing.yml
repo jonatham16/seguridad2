@@ -1,0 +1,17 @@
+molinaseguridad_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: molinaseguridadBundle:Default:index }
+
+paginaprotegida:
+    path:     /perfil/paginaprotegida
+    defaults: { _controller: molinaseguridadBundle:Default:paginaprotegida }
+
+login:
+    path: /login
+    defaults: { _controller: molinaseguridadBundle:Default:login }
+    
+check_path:
+    path: /check
+
+logout:
+    path: /logout
