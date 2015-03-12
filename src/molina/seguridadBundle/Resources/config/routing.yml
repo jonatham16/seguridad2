@@ -5,6 +5,10 @@ molinaseguridad_homepage:
 paginaprotegida:
     path:     /perfil/paginaprotegida
     defaults: { _controller: molinaseguridadBundle:Default:paginaprotegida }
+    
+registro_usuario:
+    path: /registro
+    defaults: { _controller: molinaseguridadBundle:Default:registro}
 
 login:
     path: /login

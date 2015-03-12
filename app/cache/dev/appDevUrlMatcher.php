@@ -132,6 +132,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'molina\\seguridadBundle\\Controller\\DefaultController::paginaprotegidaAction',  '_route' => 'paginaprotegida',);
         }
 
+        // registro_usuario
+        if ($pathinfo === '/registro') {
+            return array (  '_controller' => 'molina\\seguridadBundle\\Controller\\DefaultController::registroAction',  '_route' => 'registro_usuario',);
+        }
+
         // login
         if ($pathinfo === '/login') {
             return array (  '_controller' => 'molina\\seguridadBundle\\Controller\\DefaultController::loginAction',  '_route' => 'login',);

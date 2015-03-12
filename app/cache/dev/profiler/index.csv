@@ -205,3 +205,11 @@ b8a60d,::1,GET,http://localhost/seguridad/web/app_dev.php/perfil/paginaprotegida
 506f3b,::1,GET,http://localhost/seguridad/web/app_dev.php/hello2,1423074622,
 f39842,::1,GET,http://localhost/seguridad/web/app_dev.php/sirecoog/hello2,1423074631,891896
 891896,::1,GET,http://localhost/seguridad/web/app_dev.php/sirecoog/hello2,1423074631,
+393865,::1,GET,http://localhost/seguridad/web/app_dev.php/perfil/paginaprotegida,1426185558,
+060287,::1,GET,http://localhost/seguridad/web/app_dev.php/login,1426185560,
+1fc901,::1,POST,http://localhost/seguridad/web/app_dev.php/check,1426187162,
+f8a0d4,::1,GET,http://localhost/seguridad/web/app_dev.php/perfil/paginaprotegida,1426187163,
+bd13c8,::1,GET,http://localhost/seguridad/web/app_dev.php/registro,1426187190,9e4c70
+9e4c70,::1,GET,http://localhost/seguridad/web/app_dev.php/registro,1426187190,
+19bccf,::1,GET,http://localhost/seguridad/web/app_dev.php/registro,1426187245,
+4816ac,::1,GET,http://localhost/seguridad/web/app_dev.php/registro,1426188068,
