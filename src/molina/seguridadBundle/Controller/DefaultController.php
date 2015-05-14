@@ -5,6 +5,8 @@ namespace molina\seguridadBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use molina\seguridadBundle\Entity\Usuario;
+use molina\seguridadBundle\Form\Frontend\UsuarioType;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller {
 
@@ -27,20 +29,32 @@ class DefaultController extends Controller {
                     'error' => $error
         ));
     }
+
     public function registroAction(Request $request) {
         $usuario = new Usuario();
-        $formulario=  $this->createFormBuilder($usuario)
-            ->add('nombre')
-            ->add('login')
-            ->add('password')
-            ->add('guardar', 'submit', array('label' => 'Guardar Usuario'))    
-            ->getForm();
+        /*      $formulario=  $this->createFormBuilder($usuario)
+          ->add('nombre')
+          ->add('login')
+          ->add('password')
+          ->add('guardar', 'submit', array('label' => 'Guardar Usuario'))
+          ->getForm();
+         * 
+         */
+
+
+
+        $usuario->setNombre('pruebadatoprimario');
+        $formulario = $this->createForm(new UsuarioType(), $usuario);
         $formulario->handleRequest($request);
         if ($formulario->isValid()) {
-            echo 'hola';
+            // perform some action, such as saving the task to the database
+            $em = $this->getDoctrine()->getEntityManager();
+            $em->persist($usuario);
+            $em->flush();
+            
+            return $this->redirect($this->generateUrl('paginaprotegida'));
         }
-    return $this->render('molinaseguridadBundle:Default:registro.html.twig',
-            array('formulario' => $formulario->createView()));
+        return $this->render('molinaseguridadBundle:Default:registro.html.twig', array('formulario' => $formulario->createView()));
     }
 
 }

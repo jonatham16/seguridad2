@@ -4,6 +4,7 @@ namespace molina\seguridadBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use \Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Usuario
  *
@@ -32,6 +33,7 @@ class Usuario implements UserInterface
      * @var string
      *
      * @ORM\Column(name="login", type="string", length=50)
+     * @Assert\Email(checkMX=true)
      */
     private $login;
 
@@ -39,6 +41,7 @@ class Usuario implements UserInterface
      * @var string
      *
      * @ORM\Column(name="password", type="string", length=50)
+     * @Assert\Length(min=5, max=5)
      */
     private $password;
 
