@@ -5,7 +5,12 @@
         <title>LOGIN!</title>
     </head>
     <body>
-Hello paginaprotegida!
-      
+        {% for flashMessage in app.session.flashbag.get('info') %}
+            <div class="flash-notice">
+                {{ flashMessage }}
+            </div>
+        {% endfor %}
+        Hello paginaprotegida!
+
     </body>
 </html>

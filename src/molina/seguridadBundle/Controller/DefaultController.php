@@ -51,7 +51,10 @@ class DefaultController extends Controller {
             $em = $this->getDoctrine()->getEntityManager();
             $em->persist($usuario);
             $em->flush();
-            
+            $request->getSession()->getFlashBag()->add(
+                'info',
+                'Se guardo correctamente!'
+            );
             return $this->redirect($this->generateUrl('paginaprotegida'));
         }
         return $this->render('molinaseguridadBundle:Default:registro.html.twig', array('formulario' => $formulario->createView()));
